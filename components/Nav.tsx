@@ -12,7 +12,7 @@ export default function Nav() {
           href="#about"
           className="font-mono text-xs uppercase tracking-[0.2em] text-blueprint focus-ring rounded-sm"
         >
-          PA / 01
+          Parthiban Aruchamy
         </a>
         <ul className="flex items-center gap-6 sm:gap-8">
           {links.map((link) => (
