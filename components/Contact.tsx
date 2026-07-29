@@ -39,8 +39,7 @@ export default function Contact() {
 
         <div className="mt-16 flex flex-col justify-between gap-4 border-t border-paper/10 pt-6 font-mono text-[11px] uppercase tracking-[0.1em] text-paper/40 sm:flex-row">
           <span>© Parthiban Aruchamy — {new Date().getFullYear()}</span>
-          <span>Coimbatore, Tamil Nadu, India</span>
-        </div>
+                  </div>
       </div>
     </section>
   );
