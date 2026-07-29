@@ -94,7 +94,7 @@ export default function Experience() {
   return (
     <section id="experience" className="border-b border-line bg-paper">
       <div className="mx-auto max-w-5xl px-6 py-20 sm:py-24">
-        <SectionLabel index="02" title="Experience" />
+        <SectionLabel index="" title="Experience" />
 
         <ol className="space-y-14">
           {roles.map((role) => (
