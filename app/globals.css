@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-plex-mono: "IBM Plex Mono", monospace;
+}
+
+body {
+  background-color: #F5F7F8;
+  color: #12202B;
+}
+
+::selection {
+  background: #1D4E6B;
+  color: #F5F7F8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Registration crosshair — engineering drawing alignment mark */
+.crosshair {
+  position: relative;
+}
+.crosshair::before,
+.crosshair::after {
+  content: "";
+  position: absolute;
+  background: #B5793B;
+}
+.crosshair::before {
+  width: 14px;
+  height: 1.5px;
+}
+.crosshair::after {
+  width: 1.5px;
+  height: 14px;
+}
+
+.crosshair-tl::before { top: -1px; left: -8px; }
+.crosshair-tl::after { top: -8px; left: -1px; }
+.crosshair-tr::before { top: -1px; right: -8px; }
+.crosshair-tr::after { top: -8px; right: -1px; }
+.crosshair-bl::before { bottom: -1px; left: -8px; }
+.crosshair-bl::after { bottom: -8px; left: -1px; }
+.crosshair-br::before { bottom: -1px; right: -8px; }
+.crosshair-br::after { bottom: -8px; right: -1px; }
+
+/* Dimension-line divider, like a callout on a technical drawing */
+.dim-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4C5E68;
+}
+.dim-line::before,
+.dim-line::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #C7D2D8;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #1D4E6B;
+  outline-offset: 3px;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: riseIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
