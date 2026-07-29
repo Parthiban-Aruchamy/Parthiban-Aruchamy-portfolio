@@ -23,14 +23,11 @@ export default function Hero() {
                 alt="Portrait of Parthiban Aruchamy"
                 fill
                 sizes="256px"
-                className="object-cover grayscale"
+                className="object-cover object-top"
                 priority
               />
             </div>
-            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-inkfade">
-              Fig. 01 — Coimbatore, IN
-            </p>
-          </div>
+            </div>
         </div>
 
         {/* Identity block */}
