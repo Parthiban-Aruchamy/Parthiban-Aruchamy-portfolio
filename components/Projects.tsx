@@ -51,6 +51,37 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "This Portfolio Site — Design, Build & CI/CD Deployment",
+    tag: "Personal Project",
+    dates: "2026",
+    summary:
+      "Designed and built this site from scratch as an engineering-datasheet-styled portfolio, with a continuous deployment pipeline so every change goes live automatically.",
+    bullets: [
+      "Designed a custom visual system (blueprint-grid backgrounds, crosshair frame accents, monospace data labels) rather than using an off-the-shelf template, to reflect an engineering/technical positioning.",
+      "Built with Next.js 14 (App Router) and TypeScript for type-safe, component-based architecture, styled with Tailwind CSS using a custom design token set (ink, paper, blueprint, brass color roles).",
+      "Structured content as typed data arrays per section (Experience, Projects) rather than hardcoded markup, so new roles or projects can be added by editing a single array, not rewriting layout code.",
+      "Set up continuous deployment via GitHub + Vercel, diagnosing and resolving a webhook registration issue that was silently preventing automatic redeploys on push.",
+      "Iterated the site live in production using GitHub's web editor for rapid content updates without a local dev environment.",
+    ],
+    stack: [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel",
+      "GitHub",
+      "App Router",
+    ],
+    metrics: [
+      { value: "100%", label: "Auto-Deployed on Push" },
+      { value: "2", label: "Sections, Fully Data-Driven" },
+      { value: "0", label: "Manual Deploy Steps" },
+    ],
+    screenshots: [],
+    links: [
+      { label: "View Live Site", href: "https://parthiban-aruchamy-portfolio-1.vercel.app/" },
+    ],
+  },
 ];
 
 export default function Projects() {
