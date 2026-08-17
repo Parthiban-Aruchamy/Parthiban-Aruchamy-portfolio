@@ -131,15 +131,24 @@ export default function Projects() {
                         key={shot.src}
                         className="crosshair crosshair-tl crosshair-br overflow-hidden border border-line bg-panel"
                       >
-                        <div className="relative aspect-[4/3] w-full">
+                        <a
+                          href={shot.src}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="focus-ring group relative block aspect-[3/4] w-full bg-paper sm:aspect-square"
+                          aria-label={`Open full-size image: ${shot.alt}`}
+                        >
                           <Image
                             src={shot.src}
                             alt={shot.alt}
                             fill
                             sizes="(min-width: 640px) 50vw, 100vw"
-                            className="object-cover object-top"
+                            className="object-contain object-center transition-opacity group-hover:opacity-80"
                           />
-                        </div>
+                          <span className="pointer-events-none absolute bottom-2 right-2 rounded-sm border border-line bg-paper/90 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-inkfade opacity-0 transition-opacity group-hover:opacity-100">
+                            View full ↗
+                          </span>
+                        </a>
                         <figcaption className="border-t border-line px-3 py-2 font-mono text-[11px] leading-snug text-inkfade">
                           {shot.caption}
                         </figcaption>
