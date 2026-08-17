@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLabel from "./SectionLabel";
 
 type Project = {
@@ -7,6 +8,8 @@ type Project = {
   summary: string;
   bullets: string[];
   stack: string[];
+  metrics: { value: string; label: string }[];
+  screenshots: { src: string; alt: string; caption: string }[];
   links?: { label: string; href: string }[];
 };
 
@@ -31,6 +34,23 @@ const projects: Project[] = [
       "OAuth 2.0",
       "AI Builder (GPT)",
       "HTML/CSS Templating",
+    ],
+    metrics: [
+      { value: "3+", label: "Sources Aggregated" },
+      { value: "100%", label: "Manual Effort Reduced" },
+      { value: "Weekly", label: "Delivery Cadence" },
+    ],
+    screenshots: [
+      {
+        src: "/projects/auto-news-flow.jpg",
+        alt: "Power Automate flow diagram for the auto news digest pipeline",
+        caption: "End-to-end flow — Recurrence, Excel-driven source list, nested RSS aggregation loops, email delivery",
+      },
+      {
+        src: "/projects/auto-news-email.jpg",
+        alt: "Sample weekly digest email output",
+        caption: "Delivered digest — clickable headlines, summaries, and timestamps",
+      },
     ],
   },
 ];
@@ -87,6 +107,47 @@ export default function Projects() {
                   ))}
                 </ul>
 
+                {/* Metrics strip */}
+                {project.metrics.length > 0 && (
+                  <dl className="mt-6 grid grid-cols-3 divide-x divide-line border border-line bg-ink">
+                    {project.metrics.map((m) => (
+                      <div key={m.label} className="px-3 py-4 text-center sm:px-4">
+                        <dd className="font-display text-xl font-semibold text-paper sm:text-2xl">
+                          {m.value}
+                        </dd>
+                        <dt className="mt-1 font-mono text-[9px] uppercase leading-tight tracking-[0.1em] text-paper/50 sm:text-[10px]">
+                          {m.label}
+                        </dt>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+
+                {/* Screenshots */}
+                {project.screenshots.length > 0 && (
+                  <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                    {project.screenshots.map((shot) => (
+                      <figure
+                        key={shot.src}
+                        className="crosshair crosshair-tl crosshair-br overflow-hidden border border-line bg-panel"
+                      >
+                        <div className="relative aspect-[4/3] w-full">
+                          <Image
+                            src={shot.src}
+                            alt={shot.alt}
+                            fill
+                            sizes="(min-width: 640px) 50vw, 100vw"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                        <figcaption className="border-t border-line px-3 py-2 font-mono text-[11px] leading-snug text-inkfade">
+                          {shot.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
+
                 {project.links && project.links.length > 0 && (
                   <div className="mt-4 flex flex-wrap gap-4">
                     {project.links.map((link) => (
@@ -110,4 +171,3 @@ export default function Projects() {
     </section>
   );
 }
-
