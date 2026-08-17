@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const metrics = [
-  { value: "14+", label: "Years, Int'l Programs" },
+  { value: "14+", label: "Years, Int'l Projects" },
   { value: "$10M+", label: "Peak Annual Portfolio" },
   { value: "95%+", label: "On-Time Delivery" },
   { value: "22%", label: "Supplier Cost Reduction" },
